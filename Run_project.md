@@ -1,7 +1,7 @@
 # Installation
 
 ## 1- Ouvrir un éditeur de code
-Ouvrir un éditeur de code (par exemple Vscode)
+Ouvrir un éditeur de code (par exemple Vscode)   
 Lancer un terminal
 
 ## 2- Cloner le dépôt
@@ -18,6 +18,6 @@ env\Scripts\activate # Pour Windows
 pip install -r requirements.txt
 
 ## 4- Lancer le notebook
-Ouvrir le notebook
-Utiliser env pour lire le code
+Ouvrir le notebook   
+Utiliser env pour lire le code   
 Lancer le notebook
