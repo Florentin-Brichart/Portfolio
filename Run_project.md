@@ -8,7 +8,7 @@ Lancer un terminal
 git clone https://github.com/Florentin-Brichart/Portfolio
 
 ## 3- Créer et activer un environnement virtuel (venv)
-python -m venv env
+python -m venv env **(utiliser python 3.10 ou 3.11)**
 
 source env/bin/activate # Pour Linux/macOS
 
