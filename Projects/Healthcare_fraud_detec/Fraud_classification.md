@@ -20,5 +20,5 @@ Pour simplifier le premier modèle, nous allons supprimer les lignes avec des Na
 Ensuite, on standardise les données quantitatives en gardant les valeurs aberrantes via RobustScaler.    
 Puis on encode les données non-numériques avec un mapping ordinal ou avec un one hot encoder.
 # Résultat
-Avec le preprocessing et le perceptron multicouche créée, nous arrivons à prédire à plus de 98% les données du test_data.
+Avec le preprocessing et le perceptron multicouche créée, nous arrivons à prédire à plus de 99% les données du test_data.
 Nous avons aussi créé une fonction qui prédit si une demande de remboursement est frauduleuse.
