@@ -17,6 +17,10 @@ env\Scripts\activate # Pour Windows
 ## 4- Installer les dépendances
 pip install -r requirements.txt
 
+Pour torch : 
+- pip install torch torchsummary --> installation classique
+- pip install torch_directml torchsummary --> Utilisateur windows + carte graphique AMD
+
 ## 4- Lancer le notebook
 Ouvrir le notebook   
 Utiliser env pour lire le code   
