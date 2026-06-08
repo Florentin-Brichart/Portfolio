@@ -19,21 +19,21 @@
     Projet de classification sur la détection de fraudes dans le secteur de la santé. L'objectif est de créer un perceptron capable de détecter les demandes de remboursement frauduleuses.
 
 ### Animals_recognition
-[Vers le dossier du projet](Projects\Animals_recognition\Animals_recog.md)
+[Vers le dossier du projet](Projects/Animals_recognition/Animals_recog.md)
 - Mots clés : Multi classification, Neural network, Image recognition
 - Librairies : Pandas, Numpy, matplotlib, Sklearn, PyTorch
 - Résumé : 
     C'est un projet de classification pour reconnaître les animaux présents sur des images. L'objectif est de comparer la prédiction d'un modèle personnalisé par rapport à un modèle préentrainé (googlenet).
 
 ### Spam_detection
-[Vers le dossier du projet](Projects\Spam_detection\Spam_detec.md)
+[Vers le dossier du projet](Projects/Spam_detection/Spam_detec.md)
 - Mots clés : Binary classification, Neural network, Text data, Spam detection
 - Librairies : Pandas, Numpy, matplotlib, Sklearn, PyTorch
 - Résumé :
     Projet de classification visant à détecter les textes qui sont des spams. J'utilise le modèle BERT pour prédire si le texte est un spam.
 
 ### Speech_recognition
-[Vers le dossier du projet](Projects\Speech_recognition\Speech_recog.md)
+[Vers le dossier du projet](Projects/Speech_recognition/Speech_recog.md)
 - Mots clés : Multi classification, Neural network, Audio recognition
 - Librairies : Pandas, Numpy, matplotlib, Sklearn, PyTorch
 - Résumé : 
