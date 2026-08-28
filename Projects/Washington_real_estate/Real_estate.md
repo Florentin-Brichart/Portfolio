@@ -2,11 +2,12 @@
 https://www.kaggle.com/datasets/kanchana1990/washington-real-estate-sold-properties-data-2026/data
 https://simplemaps.com/us-zips/WA/
 
-# EDA
-## Objectif
-Prédire le prix auquelle les propriétés se vendent :
-- Quand elle est déjà mise en vente.
 
+# Objectifs
+1) Exploratory Data Analysis (EDA): Mieux comprendre les caractéristiques présentes dans nos données.     
+2) Prédire le prix auquelle les propriétés se vendent : Quand on ne connais pas le prix souhaité.
+
+# EDA
 ## Analyse de base
 - Taille du jeu de donnée : (12017, 15)
 - Type des données : 2 str et 13 float.
@@ -20,21 +21,21 @@ On les supprime pour ne pas influencer le target.
 
 ## Ajout de variables
 Ajout de la taille de la population des villes via un autre jeu de données.    
-Création d'une zone géographique en fonction du code zip.
+Création d'une zone géographique en fonction du code zip (pour avoir une variables de localisation dans le modèle).
 
 ## Visualisation univariée
 #### Variables numériques :
 - Données asymétrique à droite ou à gauche. Transformation par équilibrer les valeurs (log, ...) ?
 - 'population' a plusieurs pics. Regroupement en différentes tailles de villes ?
-- Enormément de valeurs abérantes. Cela pourrait être des erreurs d'incrémentation ou des énormes propriétés.
+- Enormément de valeurs abérantes. Cela pourrait être des erreurs d'incrémentation ou des grandes propriétés.
 
 #### Variables - salle de bain :
 - 'bath_full' et 'bath_full_calc' ont des valeurs incohérentes (supérieurs à 'bath').
-- On ne gardera qu'une des trois variables.
+- A voir quelles variables garder.
 
 #### Variables catégorielles :
 - Distribution des régions et des types de propriété inégales.
-- Deux catégories de propriété sont sous représentés. Ecarter du modèle ?
+- Deux catégories de propriété sont sous représentés. Ecarter du modèle ? Fusionner ?
 
 #### Variable "sanitized_text" :
 C'est un texte premodifier pour supprimer les informations personnelles.
@@ -109,9 +110,29 @@ Utilisation du log target pour limiter les valeurs aberrantes.
 
 
 
-# Démarches du modèle
-## Variables gardé
 
-## Remplissage des valeurs manquantes
 
-## 
+# Modèle de base
+#### Création d'un modèle basique :
+- Suppression des colonnes
+    - qui "spoil" :'list_to_sold_ratio', 'price_per_sqft'
+    - doublons de "bath" : 'baths_full', 'baths_full_calc'
+    - colonnes inutilisable dans un modèle : 'sanitized_text', 'zip'
+- Modification des NaN par 0, médiane ou mode (en fonction du type de donnée).
+- Ajout de features pour avoir des informations via les colonnes inutilisable ('sanitized_text', 'zip')
+- Standardisation et encodage des données
+
+#### Résultats :
+Utilisation du prix de vente pour avoir un comparatif :    
+Avec listPrice, le modèle prédit bien le prix médian des propriétés (12 000 dollars d'erreur mdéian). Mais les valeurs aberrantes baisse le score global.   
+
+En supprimant le prix de vente (objectif du modèle) :     
+Le score global baisse mais il arrive a garder des prédictions raisonnables pour un premier modèle.    
+Le modèle d'arbre est meilleur que le modèle linéaire mais il a une grand overfitting qui n'est surement pas dû à la taille du dataset.
+
+
+
+
+
+
+# Optimisation du modèle
